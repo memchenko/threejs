@@ -73,3 +73,11 @@ export const roadTextures = {
   normal: textureLoader.load("/textures/road/normal.jpg"),
   roughness: textureLoader.load("/textures/road/roughness.jpg"),
 };
+
+export const rockTextures = {
+  color: textureLoader.load("/textures/rock/color.jpg"),
+  ambientOcclusion: textureLoader.load("/textures/rock/ambientOcclusion.jpg"),
+  displacement: textureLoader.load("/textures/rock/displacement.jpg"),
+  normal: textureLoader.load("/textures/rock/normal.jpg"),
+  roughness: textureLoader.load("/textures/rock/roughness.jpg"),
+};
