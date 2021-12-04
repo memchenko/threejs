@@ -1,11 +1,14 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import * as dat from "lil-gui";
 import { createLights, debugLights } from "./objects/lights";
 import { createCamera, debugCamera } from "./objects/camera";
 import { createFloor } from "./objects/floor";
-import { createColumn } from "./objects/fence";
+import { createFence } from "./objects/fence";
+import { createBuilding } from "./objects/building";
+import { debugMaterials } from "./objects/fence/materials";
+
+debugMaterials();
 
 // Config
 const sizes = {
@@ -15,23 +18,24 @@ const sizes = {
 
 // Basic dependencies
 const canvas = document.querySelector("canvas.webgl");
-const gui = new dat.GUI();
+
 const scene = new THREE.Scene();
 
 const lights = createLights();
 const { ambientLight, moonLight } = lights;
-debugLights(gui, lights);
+debugLights(lights);
 
 const camera = createCamera(sizes.width / sizes.height);
-debugCamera(gui, camera);
+debugCamera(camera);
 
 const floor = createFloor();
+const fence = createFence(9);
+const building = createBuilding();
 
-const column = createColumn();
+fence.position.set(-3.8, 0.1, -3.8);
+building.position.set(0, 0.6, -1.3);
 
-column.position.y = 0.25;
-
-scene.add(ambientLight, moonLight, camera, floor, column);
+scene.add(ambientLight, moonLight, camera, floor, fence, building);
 
 window.addEventListener("resize", () => {
   // Update sizes

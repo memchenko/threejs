@@ -31,7 +31,7 @@ export function createFloor() {
     const z = mapRange(row, 0, rows, min, max);
     for (let col = 0; col <= cols; col++) {
       const x = mapRange(col, 0, cols, min, max);
-      const y = noise3D(x, z, 20, 0.1, 0.2);
+      const y = noise3D(x, z, 20, 0.1, 0.04);
 
       const u = mapRange(row, 0, rows, 0, 1);
       const v = mapRange(col, 0, cols, 0, 1);
@@ -68,7 +68,7 @@ export function createFloor() {
     side: THREE.FrontSide,
     map: color,
     displacementMap: displacement,
-    displacementScale: 0.15,
+    displacementScale: 0.08,
     aoMap: ambientOcclusion,
     normalMap: normal,
     roughnessMap: roughness,

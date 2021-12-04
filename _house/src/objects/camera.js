@@ -1,5 +1,7 @@
 import * as THREE from "three";
 
+import { gui } from "../helpers";
+
 export function createCamera(aspectRatio) {
   const camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 100);
   camera.position.x = 4;
@@ -9,7 +11,7 @@ export function createCamera(aspectRatio) {
   return camera;
 }
 
-export function debugCamera(gui, camera) {
+export function debugCamera(camera) {
   const cameraFolder = gui.addFolder("Camera");
 
   cameraFolder.add(camera.position, "x", 0, 10, 0.1);
