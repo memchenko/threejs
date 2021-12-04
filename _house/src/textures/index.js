@@ -65,3 +65,11 @@ export const windowTextures = {
   opacity: textureLoader.load("/textures/window/opacity.jpg"),
   metallic: textureLoader.load("/textures/window/metallic.jpg"),
 };
+
+export const roadTextures = {
+  color: textureLoader.load("/textures/road/color.jpg"),
+  ambientOcclusion: textureLoader.load("/textures/road/ambientOcclusion.jpg"),
+  displacement: textureLoader.load("/textures/road/displacement.jpg"),
+  normal: textureLoader.load("/textures/road/normal.jpg"),
+  roughness: textureLoader.load("/textures/road/roughness.jpg"),
+};

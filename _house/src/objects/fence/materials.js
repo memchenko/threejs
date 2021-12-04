@@ -38,9 +38,9 @@ brickMat.color.minFilter = THREE.NearestFilter;
 brickMat.color.magFilter = THREE.NearestFilter;
 
 export const metalMat = new THREE.MeshStandardMaterial({
-  color: "black",
-  roughness: 0.2,
+  color: 0x666666,
   metalness: 0.7,
+  roughness: 0.5,
 });
 
 metalMat.color.generateMipmaps = false;
