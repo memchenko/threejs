@@ -1,6 +1,7 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { range } from "canvas-sketch-util/random";
 import { createLights, debugLights } from "./objects/lights";
 import { createCamera, debugCamera } from "./objects/camera";
 import { createFloor } from "./objects/floor";
@@ -36,10 +37,42 @@ building.position.set(0, 0.6, -1.3);
 scene.add(ambientLight, moonLight, camera, floor, fence, building);
 
 (async () => {
-  const grave = await createGrave();
+  const createGraves = async () => {
+    const graves = new THREE.Group();
 
-  grave.position.set(0, 1, 2);
-  scene.add(grave);
+    for (let i = 0; i < 4; i++) {
+      const row = i % 2;
+      const col = Math.floor(i / 2);
+      const isLying = Math.random() < 0.2;
+      const grave = await createGrave();
+
+      grave.scale.set(0.7, 0.7, 0.7);
+      grave.position.set(row * 1.2, 0, col * 1.2);
+
+      if (isLying) {
+        grave.rotateY(range(-0.08, 0.08) * Math.PI);
+        grave.rotateX(Math.PI * -0.5);
+        grave.position.y = 0.05;
+      } else {
+        grave.rotateY(range(-0.08, 0.08) * Math.PI);
+        grave.rotateZ(range(-0.05, 0.05) * Math.PI);
+      }
+
+      graves.add(grave);
+    }
+
+    return graves;
+  };
+
+  const graves1 = await createGraves();
+  const graves2 = await createGraves();
+  const graves3 = await createGraves();
+
+  graves1.position.set(-3, 0, 1.5);
+  graves2.position.set(1.5, 0, 1.5);
+  graves3.position.set(-3, 0, -2);
+
+  scene.add(graves1, graves2, graves3);
 })();
 
 window.addEventListener("resize", () => {
