@@ -6,9 +6,6 @@ import { createCamera, debugCamera } from "./objects/camera";
 import { createFloor } from "./objects/floor";
 import { createFence } from "./objects/fence";
 import { createBuilding } from "./objects/building";
-import { debugMaterials } from "./objects/fence/materials";
-
-debugMaterials();
 
 // Config
 const sizes = {

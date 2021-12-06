@@ -52,14 +52,6 @@ const lampParams = {
   emissive: 0xd6f594,
 };
 
-export const lampMat = new THREE.MeshStandardMaterial({
-  color: lampParams.color,
-  emissive: lampParams.emissive,
-  emissiveIntensity: 1,
-  roughness: 0.5,
-  metalness: 0.15,
-});
-
 export const debugMaterials = () => {
   const materials = gui.addFolder("Materials");
   const handleChangeColor = (prop) => (color) => {
