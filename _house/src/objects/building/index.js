@@ -6,6 +6,7 @@ import { createWalls } from "./walls";
 import { createRoof } from "./roof";
 import { createShovel } from "./shovel";
 import { createWindow } from "./window";
+import { createCross } from "./cross";
 
 export const createBuilding = () => {
   const building = new THREE.Group();
@@ -15,6 +16,7 @@ export const createBuilding = () => {
   const leftWindow = createWindow();
   const door = createDoor();
   const shovel = createShovel();
+  const cross = createCross();
 
   leftWindow.scale.set(0.7, 0.7, 0.7);
   leftWindow.rotateY(Math.PI * 0.5);
@@ -33,7 +35,10 @@ export const createBuilding = () => {
   shovel.rotateX(Math.PI * 0.03);
   shovel.rotateZ(Math.PI * 0.03);
 
-  building.add(walls, roof, leftWindow, rightWindow, door, shovel);
+  cross.scale.set(0.7, 0.7, 0.7);
+  cross.position.set(0, 1.1, 0.9);
+
+  building.add(walls, roof, leftWindow, rightWindow, door, shovel, cross);
 
   return building;
 };
