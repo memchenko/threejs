@@ -4,6 +4,7 @@ import { WALL_SIZE } from "./constants";
 import { createDoor } from "./door";
 import { createWalls } from "./walls";
 import { createRoof } from "./roof";
+import { createShovel } from "./shovel";
 import { createWindow } from "./window";
 
 export const createBuilding = () => {
@@ -13,6 +14,7 @@ export const createBuilding = () => {
   const roof = createRoof();
   const leftWindow = createWindow();
   const door = createDoor();
+  const shovel = createShovel();
 
   leftWindow.scale.set(0.7, 0.7, 0.7);
   leftWindow.rotateY(Math.PI * 0.5);
@@ -26,7 +28,12 @@ export const createBuilding = () => {
   door.position.set(0, -0.02);
   door.position.z = WALL_SIZE / 2 + 0.01;
 
-  building.add(walls, roof, leftWindow, rightWindow, door);
+  shovel.scale.set(0.25, 0.25, 0.25);
+  shovel.position.set(0.6, -0.35, 1);
+  shovel.rotateX(Math.PI * 0.03);
+  shovel.rotateZ(Math.PI * 0.03);
+
+  building.add(walls, roof, leftWindow, rightWindow, door, shovel);
 
   return building;
 };

@@ -6,7 +6,7 @@ export function createLights() {
   const ambientLight = new THREE.AmbientLight("#b9d5ff", 0.5);
 
   const moonLight = new THREE.DirectionalLight("#b9d5ff", 0.5);
-  moonLight.position.set(4, 5, -2);
+  moonLight.position.set(4, 5, 6);
 
   return {
     ambientLight,

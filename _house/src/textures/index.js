@@ -81,3 +81,11 @@ export const rockTextures = {
   normal: textureLoader.load("/textures/rock/normal.jpg"),
   roughness: textureLoader.load("/textures/rock/roughness.jpg"),
 };
+
+export const graveTextures = {
+  color: textureLoader.load("/textures/grave/color.jpg"),
+  ambientOcclusion: textureLoader.load("/textures/grave/ambientOcclusion.jpg"),
+  displacement: textureLoader.load("/textures/grave/displacement.jpg"),
+  normal: textureLoader.load("/textures/grave/normal.jpg"),
+  roughness: textureLoader.load("/textures/grave/roughness.jpg"),
+};

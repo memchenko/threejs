@@ -6,6 +6,7 @@ import { createCamera, debugCamera } from "./objects/camera";
 import { createFloor } from "./objects/floor";
 import { createFence } from "./objects/fence";
 import { createBuilding } from "./objects/building";
+import { createGrave } from "./objects/grave";
 
 // Config
 const sizes = {
@@ -33,6 +34,13 @@ fence.position.set(-3.8, 0.1, -3.8);
 building.position.set(0, 0.6, -1.3);
 
 scene.add(ambientLight, moonLight, camera, floor, fence, building);
+
+(async () => {
+  const grave = await createGrave();
+
+  grave.position.set(0, 1, 2);
+  scene.add(grave);
+})();
 
 window.addEventListener("resize", () => {
   // Update sizes

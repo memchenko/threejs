@@ -89,3 +89,22 @@ export const handleMat = new THREE.MeshStandardMaterial({
   metalness: 0.7,
   roughness: 0.2,
 });
+
+export const bladeMat = new THREE.MeshStandardMaterial({
+  side: THREE.DoubleSide,
+  color: 0xffffff,
+  roughness: 0.3,
+  metalness: 0.5,
+});
+
+export const coneMat = new THREE.MeshStandardMaterial({
+  color: 0xffffff,
+  roughness: 0.3,
+  metalness: 0.5,
+});
+
+export const haftMat = new THREE.MeshStandardMaterial({
+  color: 0x6a3e25,
+  roughness: 0.5,
+  metalness: 0,
+});
