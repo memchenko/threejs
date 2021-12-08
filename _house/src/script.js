@@ -8,6 +8,7 @@ import { createFloor } from "./objects/floor";
 import { createFence } from "./objects/fence";
 import { createBuilding } from "./objects/building";
 import { createGrave } from "./objects/grave";
+import { createGhost } from "./objects/ghost";
 
 // Config
 const sizes = {
@@ -27,14 +28,19 @@ debugLights(lights);
 const camera = createCamera(sizes.width / sizes.height);
 debugCamera(camera);
 
+const fog = new THREE.Fog(0x889988, 0, 15);
+scene.fog = fog;
+
 const floor = createFloor();
 const fence = createFence(9);
 const building = createBuilding();
+const ghost = createGhost();
 
 fence.position.set(-3.8, 0.1, -3.8);
 building.position.set(0, 0.6, -1.3);
+ghost.position.set(0, 2, 1);
 
-scene.add(ambientLight, moonLight, camera, floor, fence, building);
+scene.add(ambientLight, moonLight, camera, floor, fence, building, ghost);
 
 (async () => {
   const createGraves = async () => {
@@ -97,6 +103,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor(0x889988);
 
 const clock = new THREE.Clock();
 
