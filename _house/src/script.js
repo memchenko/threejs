@@ -35,12 +35,23 @@ const floor = createFloor();
 const fence = createFence(9);
 const building = createBuilding();
 const ghost = createGhost();
+const ghost1 = createGhost();
 
 fence.position.set(-3.8, 0.1, -3.8);
 building.position.set(0, 0.6, -1.3);
 ghost.position.set(0, 2, 1);
+ghost1.position.set(-1, 2, 1);
 
-scene.add(ambientLight, moonLight, camera, floor, fence, building, ghost);
+scene.add(
+  ambientLight,
+  moonLight,
+  camera,
+  floor,
+  fence,
+  building,
+  ghost,
+  ghost1
+);
 
 (async () => {
   const createGraves = async () => {
