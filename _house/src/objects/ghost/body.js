@@ -11,6 +11,8 @@ const boneHeight = tubeHeight / bonesCount;
 const tubeHalfHeight = tubeHeight * 0.5;
 const heightSegmentCount = bonesCount * segmentBoneCount;
 
+const clock = new THREE.Clock();
+
 export const createBody = () => {
   const tubeGeo = new THREE.CylinderGeometry(
     0,
@@ -64,7 +66,7 @@ export const createBody = () => {
   mesh.bind(skeleton);
 
   const animate = () => {
-    const now = Date.now() / 150;
+    const now = clock.getElapsedTime() * 3;
 
     for (let i = 9; i > 2; i--) {
       const y = mapRange(i, 2, 9, 0 + now, Math.PI + now);
