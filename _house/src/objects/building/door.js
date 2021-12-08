@@ -8,8 +8,8 @@ const DOOR_WIDTH = DOOR_HEIGHT * 0.5;
 
 const doorGeo = new THREE.PlaneGeometry(DOOR_WIDTH, DOOR_HEIGHT, 100, 100);
 const handleGeo = new THREE.TorusGeometry(0.04, 0.006, 12, 20);
-const frameHorizontalGeo = new THREE.BoxGeometry(DOOR_WIDTH, 0.05, 0.01);
-const frameVerticalGeo = new THREE.BoxGeometry(0.05, DOOR_HEIGHT, 0.01);
+const frameHorizontalGeo = new THREE.BoxGeometry(DOOR_WIDTH, 0.05, 0.02);
+const frameVerticalGeo = new THREE.BoxGeometry(0.05, DOOR_HEIGHT, 0.02);
 
 export const createDoor = () => {
   const door = new THREE.Group();

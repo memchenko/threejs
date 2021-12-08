@@ -51,7 +51,7 @@ export const roofTextures = {
 export const doorTextures = {
   color: textureLoader.load("/textures/door/color.jpg"),
   ambientOcclusion: textureLoader.load("/textures/door/ambientOcclusion.jpg"),
-  displacement: textureLoader.load("/textures/door/height.jpg"),
+  displacement: textureLoader.load("/textures/door/height.png"),
   normal: textureLoader.load("/textures/door/normal.jpg"),
   roughness: textureLoader.load("/textures/door/roughness.jpg"),
 };

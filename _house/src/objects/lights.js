@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 import { gui } from "../helpers";
 
-export function createLights() {
+export const createEnvironmentLights = () => {
   const ambientLight = new THREE.AmbientLight("#b9d5ff", 0.2);
 
   const moonLight = new THREE.DirectionalLight("#b9d5ff", 0.3);
@@ -12,7 +12,11 @@ export function createLights() {
     ambientLight,
     moonLight,
   };
-}
+};
+
+export const createGhostLight = () => {
+  return new THREE.PointLight("lightgreen", 0.8, 2, 2);
+};
 
 export function debugLights(lights) {
   const { ambientLight, moonLight } = lights;
