@@ -10,6 +10,11 @@ export const createGhost = () => {
   const body = createBody();
   const light = createGhostLight();
 
+  light.castShadow = true;
+  light.shadow.mapSize.width = 256;
+  light.shadow.mapSize.height = 256;
+  light.shadow.camera.far = 7;
+
   body.position.y = -1;
   light.position.y = 0;
 

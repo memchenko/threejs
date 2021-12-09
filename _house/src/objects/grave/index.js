@@ -21,6 +21,8 @@ export const createGrave = async () => {
   years.position.set(0, 0.55, 0.15);
   rip.position.set(0, 0.35, 0.15);
 
+  stone.castShadow = true;
+
   grave.add(stone, firstName, lastName, years, rip);
 
   return grave;

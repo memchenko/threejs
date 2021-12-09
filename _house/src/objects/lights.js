@@ -3,10 +3,10 @@ import * as THREE from "three";
 import { gui } from "../helpers";
 
 export const createEnvironmentLights = () => {
-  const ambientLight = new THREE.AmbientLight("#b9d5ff", 0.2);
+  const ambientLight = new THREE.AmbientLight("#b9d5ff", 0.15);
 
-  const moonLight = new THREE.DirectionalLight("#b9d5ff", 0.3);
-  moonLight.position.set(4, 5, 6);
+  const moonLight = new THREE.DirectionalLight("#b9d5ff", 0.25);
+  moonLight.position.set(-0.9, 5, 2.5);
 
   return {
     ambientLight,

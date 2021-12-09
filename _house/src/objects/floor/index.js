@@ -30,6 +30,10 @@ export const createFloor = () => {
   rock4.scale.set(0.1, 0.1, 0.1);
   rock4.position.set(1.8, 0.05, -0.8);
 
+  rock1.castShadow = true;
+  rock2.castShadow = true;
+  baseFloor.receiveShadow = true;
+
   floor.add(baseFloor, road, rock1, rock2, rock3, rock4);
 
   return floor;

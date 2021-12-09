@@ -36,12 +36,16 @@ export const createLattice = () => {
   const crossbarTop = new THREE.Mesh(crossbarGeo, metalMat);
   crossbarTop.position.y = COLUMN_H * 0.6;
 
+  crossbarTop.castShadow = true;
+  crossbarBottom.castShadow = true;
   crossbarTop.rotateZ(Math.PI * 0.5);
   crossbarBottom.rotateZ(Math.PI * 0.5);
 
   for (let i = 0; i < SPIKES_NUMBER; i++) {
     const index = Math.abs(i - Math.floor(SPIKES_NUMBER / 2));
     const spike = new THREE.Mesh(spikesGeos[index], metalMat);
+
+    spike.castShadow = true;
     spike.position.x = i * SPIKES_DIST - 0.5;
     spike.position.y = 0.15;
 

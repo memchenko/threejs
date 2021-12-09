@@ -34,6 +34,11 @@ export function createColumn(isEntrance) {
     : new THREE.Mesh(sphereGeo, stoneMat);
   const support = new THREE.Mesh(supportGeo, stoneMat);
 
+  basement.castShadow = true;
+  column.castShadow = true;
+  top.castShadow = true;
+  support.castShadow = true;
+
   column.position.y = BASE_H / 2 + COLUMN_H / 2;
   support.position.y = BASE_H / 2 + COLUMN_H + 0.0001;
   support.rotateX(Math.PI * 1.5);

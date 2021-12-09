@@ -2,6 +2,7 @@ import * as THREE from "three";
 import * as dat from "lil-gui";
 
 export const gui = new dat.GUI();
+gui.close();
 
 export const clock = new THREE.Clock();
 

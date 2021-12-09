@@ -1,7 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { mapRange } from "canvas-sketch-util/math";
 import { range } from "canvas-sketch-util/random";
 import { createEnvironmentLights, debugLights } from "./objects/lights";
 import { createCamera, debugCamera } from "./objects/camera";
@@ -144,6 +143,12 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setClearColor(0x889988);
+
+// shadows
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+moonLight.castShadow = true;
 
 animate(() => {
   // Update controls

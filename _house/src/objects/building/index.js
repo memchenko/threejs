@@ -18,6 +18,8 @@ export const createBuilding = () => {
   const shovel = createShovel();
   const cross = createCross();
 
+  walls.castShadow = true;
+
   leftWindow.scale.set(0.7, 0.7, 0.7);
   leftWindow.rotateY(Math.PI * 0.5);
   leftWindow.position.set(WALL_SIZE / 2 + 0.01, 0.2, 0);
