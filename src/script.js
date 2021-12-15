@@ -23,4 +23,5 @@ import "./style.css";
 // import "./24-custom-models-with-blender";
 // import "./25-realistic-render";
 // import "./26-code-structuring-for-bigger-projects";
-import "./27-shaders";
+// import "./27-shaders";
+import "./28-shader-patterns";
