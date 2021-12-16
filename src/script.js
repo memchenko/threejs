@@ -25,4 +25,5 @@ import "./style.css";
 // import "./26-code-structuring-for-bigger-projects";
 // import "./27-shaders";
 // import "./28-shader-patterns";
-import "./29-raging-sea";
+// import "./29-raging-sea";
+import "./30-animated-galaxy";
