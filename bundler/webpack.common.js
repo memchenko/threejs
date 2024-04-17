@@ -9,7 +9,7 @@ const pathToTemplate = template
   : "../src/index.html";
 
 module.exports = {
-  entry: path.resolve(__dirname, "../src/script.js"),
+  entry: path.resolve(__dirname, "../src/index.js"),
   output: {
     hashFunction: "xxhash64",
     filename: "bundle.[contenthash].js",
@@ -63,13 +63,6 @@ module.exports = {
         generator: {
           filename: "assets/fonts/[hash][ext]",
         },
-      },
-
-      // Shaders
-      {
-        test: /\.(glsl|vs|fs|vert|frag)$/,
-        exclude: /node_modules/,
-        use: ["raw-loader"],
       },
     ],
   },
