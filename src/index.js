@@ -31,4 +31,5 @@ import "./style.css";
 // import "./31-modified-materials";
 // import "./32-post-processing";
 
-import "./shaders/32-coffee-smoke";
+// import "./shaders/32-coffee-smoke";
+import "./shaders/33-hologram";
